@@ -6,7 +6,10 @@ class DB:
         self._db[key] = value
 
     def get(self, key: str) -> any | None:
-        return self._db.get(key)
+        if key not in self._db.keys():
+            raise KeyError(f"Key {key} not found")
+        else:
+            return self._db[key]
 
     def exists(self, key: str) -> bool:
         keys = self._db.keys()
