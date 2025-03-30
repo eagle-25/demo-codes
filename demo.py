@@ -9,8 +9,4 @@ class DB:
         return self._db.get(key)
 
     def exists(self, key: str) -> bool:
-        keys = self._db.keys()
-        for k in keys:
-            if k == key:
-                return True
-        return False
+        return key in self._db
