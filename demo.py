@@ -14,3 +14,6 @@ class DB:
             if k == key:
                 return True
         return False
+
+    def delete(self, key: str):
+        self._db.pop(key)
